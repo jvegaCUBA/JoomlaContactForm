@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.6.0" client="site" method="upgrade">
+	<name>GDH Contact</name>
+	<author>Jorge Vega</author>
+	<creationDate>Sep 2015</creationDate>
+	<copyright>Copyright (C) 2015 GDH Soluciones. All rights reserved.</copyright>
+	<license>PHP files are licensed under  GNU/GPL V2, CSS  - JS - IMAGE files  are Copyrighted material</license>
+	<authorEmail>jvega.perez86@gmail.com</authorEmail>
+	<authorUrl>www.gdhsoluciones.com</authorUrl>
+	<version>1.0</version>
+	<description>GDH Contact - Ajax based Contact Module for Joomla!</description>
+	<languages>
+        <language tag="en-GB">language/en-GB.mod_gdh_contact.ini</language>
+        <language tag="es-ES">language/es-ES.mod_gdh_contact.ini</language>
+	</languages>	
+	<files>
+		<filename module="mod_gdh_contact">mod_gdh_contact.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="Basic">
+				<field name="email" type="text" default="" label="ADMIN_EMAIL" description="ADMIN_EMAIL_DESC" />
+				<field name="success" type="text" default="Email was sent successfully." label="SUCCESS_NOTICE" description="SUCCESS_NOTICE" />
+				<field name="failed" type="text" default="Email could not be sent." label="FAILED_NOTICE" description="FAILED_NOTICE" />
+				<field name="captcha" type="radio" class="btn-group" default="1" label="CAPTCHA" description="CAPTCHA_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="captcha_secret_key" type="text" default="6LfP9gwTAAAAADmk1PgVnCrPFnrCPgzw_60zEcVa" label="CAPTCHA_SECRET_KEY" />
+				<field name="captcha_random_min" type="text" default="1" label="CAPTCHA_RAND_MIN" />
+				<field name="captcha_random_max" type="text" default="9" label="CAPTCHA_RAND_MAX" />
+				<field name="failed_captcha" type="text" default="You have entered wrong captcha. Please try again." label="WRONG_CAPTCHA" />
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field name="cachemode" type="hidden" default="itemid">
+					<option value="itemid"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
